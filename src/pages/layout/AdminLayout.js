@@ -7,10 +7,13 @@ export const AdminLayout = () => {
     <div>
       <Header />
 
-      <main>
-        <Container>
+      <main className="main">
+        <Container fluid>
           <Row>
-            <Col></Col>
+            <Col>
+            {/* Have to add Sidebar here. */}
+            
+            </Col>
           </Row>
         </Container>
       </main>
