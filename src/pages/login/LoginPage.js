@@ -2,12 +2,15 @@ import React from "react";
 import { Header } from "../layout/Header";
 
 export const LoginPage = () => {
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div>
       <Header />
 
       <div className="main login-page">
-        <Form className="shadow-lg rounded">
+        <Form className="shadow-lg rounded" onSubmit={handleOnSubmit}>
           <h3 className="text-center">Welcome Back! </h3>
           <hr className="mb-5" />
           <Form.Group className="mb-3">
