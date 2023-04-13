@@ -1,50 +1,39 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import NavBar from "react-bootstrap/Navbar";
-import { Link, useNavigate } from "react-router-dom";
+import { Col, Container, Row } from "react-bootstrap";
+import Carousel from "react-bootstrap/Carousel";
 
 export const Header = () => {
-  const navigate = useNavigate();
-
   return (
-    <NavBar bg="warning" expand="md">
-      <Container>
-        <Link to="/" className="navbar-brand">
-          CLient Shop
-        </Link>
-        <NavBar.Toggle aria-controls="basic-navbar-nav" />
-        <NavBar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            {user?._id ? (
-              <>
-                <Link to="/register" className="nav-link">
-                  <i className="fa-solid fa-bell" title="Notifications"></i>
-                </Link>
-                <Link to="/register" className="nav-link">
-                  <i className="fa-solid fa-user-pen" title="User Profile"></i>
-                </Link>
-                <Link to="/" className="nav-link">
-                  <i
-                    className="fa-solid fa-right-to-bracket"
-                    title="Notifications"
-                  ></i>
-                </Link>
-              </>
-            ) : (
-              <>
-                <Link to="/" className="nav-link">
-                  <i className="fa-solid fa-right-to-bracket" title="Login"></i>
-                  Login
-                </Link>
-                <Link to="/register" className="nav-link">
-                  <i className="fa-solid fa-user-pen" title="Login"></i>Signup
-                </Link>
-              </>
-            )}
-          </Nav>
-        </NavBar.Collapse>
-      </Container>
-    </NavBar>
+    <Container>
+      <Row>
+        <Col>
+          <Carousel fade>
+            <Carousel.Item>
+              <img
+                className="d-block   "
+                src={require("../../images/bg1.jpg")}
+                alt="First slide"
+              />
+            </Carousel.Item>
+
+            <Carousel.Item>
+              <img
+                className="d-block w-100 "
+                src={require("../../images/bg2.jpg")}
+                alt="Second slide"
+              />
+            </Carousel.Item>
+
+            <Carousel.Item>
+              <img
+                className="d-block w-100 h-100"
+                src={require("../../images/S3.png")}
+                alt="Third slide"
+              />
+            </Carousel.Item>
+          </Carousel>
+        </Col>
+      </Row>
+    </Container>
   );
 };

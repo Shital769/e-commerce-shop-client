@@ -1,5 +1,7 @@
 import React from "react";
 import { Header } from "../layout/Header";
+import { Button, Form } from "react-bootstrap";
+import Footer from "../layout/Footer";
 
 export const LoginPage = () => {
   const handleOnSubmit = (e) => {

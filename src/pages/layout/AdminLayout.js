@@ -1,23 +1,17 @@
 import React from "react";
-import Footer from "./Footer";
+import { Footer } from "./Footer";
 import { Header } from "./Header";
+import { Col, Row, Container } from "react-bootstrap";
+import { NavBar } from "./NavBar";
 
-export const AdminLayout = () => {
+export const AdminLayout = ({ children }) => {
   return (
-    <div>
-      <Header />
-
+    <>
+      <NavBar />
       <main className="main">
-        <Container fluid>
-          <Row>
-            <Col>
-            {/* Have to add Sidebar here. */}
-            
-            </Col>
-          </Row>
-        </Container>
+        <Header />
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
