@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { CustomInputField } from "../custom-input-field/CustomInputField";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
-export const ResetPasswordForm = () => {
+export const ResetPasswordForm = ({handleOnPasswordReset}) => {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState("");
 
