@@ -10,6 +10,7 @@ export const AdminLayout = ({ children }) => {
       <NavBar />
       <main className="main">
         <Header />
+        <col>{children}</col>
       </main>
       <Footer />
     </>

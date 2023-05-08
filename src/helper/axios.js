@@ -29,6 +29,17 @@ export const postNewUser = async (data) => {
   return fetchProcessor(obj);
 };
 
+//customer email verification
+export const postCustomerEmailVerification = async (data) => {
+  const url = customerApi + "/verify";
+  const obj = {
+    method: "post",
+    url,
+    data,
+  };
+  return fetchProcessor(obj);
+};
+
 //login user
 export const loginUser = async (loginData) => {
   const url = customerApi + "/login";
@@ -36,6 +47,17 @@ export const loginUser = async (loginData) => {
     method: "post",
     url,
     data: loginData,
+  };
+  return fetchProcessor(obj);
+};
+
+// otp request
+export const fetchOtpRequest = async (formData) => {
+  const url = customerApi + "/request-otp";
+  const obj = {
+    method: "post",
+    url,
+    data: formData,
   };
   return fetchProcessor(obj);
 };
