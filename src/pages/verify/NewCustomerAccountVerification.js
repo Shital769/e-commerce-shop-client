@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { postCustomerEmailVerification } from "../../helper/axios";
 import { Spinner } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 
 export const NewCustomerAccountVerification = () => {
   //use the query string
