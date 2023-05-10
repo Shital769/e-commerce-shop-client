@@ -18,4 +18,4 @@ const { reducer, actions } = systemSlice;
 
 export const { setShowModal } = actions;
 
-export default router;
+export default reducer;

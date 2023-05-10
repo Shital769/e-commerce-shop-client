@@ -51,6 +51,16 @@ export const loginUser = async (loginData) => {
   return fetchProcessor(obj);
 };
 
+//get user profile
+export const fetchUserProfile = async () => {
+  const url = customerApi + "/user-profile";
+  const obj = {
+    method: "get",
+    url,
+  };
+  return fetchProcessor(obj);
+};
+
 // otp request
 export const fetchOtpRequest = async (formData) => {
   const url = customerApi + "/request-otp";
@@ -69,6 +79,19 @@ export const resetPasswordRequest = async (formData) => {
     method: "patch",
     url,
     data: formData,
+  };
+  return fetchProcessor(obj);
+};
+
+//fetching new accessJWT
+export const fetchNewAccessJWT = async () => {
+  const url = customerApi + "/new-accessjwt";
+  const token = localStorage.getItem("refreshJWT");
+  console.log(token);
+  const obj = {
+    method: "get",
+    url,
+    token,
   };
   return fetchProcessor(obj);
 };
