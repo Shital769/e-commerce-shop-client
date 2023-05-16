@@ -1,7 +1,7 @@
 import React from "react";
 import { InputGroup, Form } from "react-bootstrap";
 
-export const UserDashboardInput = ({ label, ...rest }) => {
+export const CustomerDashboardInput = ({ label, ...rest }) => {
   return (
     <div>
       <InputGroup className="mb-3" controlId="formBasicEmail">
