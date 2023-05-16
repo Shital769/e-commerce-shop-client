@@ -122,3 +122,47 @@ export const updateUserProfile = async (data) => {
   };
   return fetchProcessor(obj);
 };
+
+//categories
+export const fetchCategory = async () => {
+  const url = categoryApi;
+  const obj = {
+    method: "get",
+    url,
+    isPrivate: true,
+  };
+  return fetchProcessor(obj);
+};
+
+//payment
+export const fetchPayment = async () => {
+  const url = paymentApi;
+  const obj = {
+    method: "get",
+    url,
+    isPrivate: true,
+  };
+  return fetchProcessor(obj);
+};
+
+//orders
+export const postOrder = async (order) => {
+  const url = orderApi + "/add";
+  const obj = {
+    method: "post",
+    url,
+    isPrivate: true,
+    data: order,
+  };
+  return fetchProcessor(obj);
+};
+
+export const getOrder = async () => {
+  const url = orderApi;
+  const obj = {
+    method: "get",
+    url,
+    isPrivate: true,
+  };
+  return fetchProcessor(obj);
+};

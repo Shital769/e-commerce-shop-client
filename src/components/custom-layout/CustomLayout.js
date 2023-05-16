@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { Header } from "../../../pages/layout/Header";
-import { Footer } from "../../pages/layout/Footer";
+import { Header } from "../layout/Header";
+import { Footer } from "../layout/Footer";
 export const CustomLayout = ({ children }) => {
   return (
     <div>

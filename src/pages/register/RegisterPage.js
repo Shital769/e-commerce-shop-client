@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { CustomInputField } from "../../components/CustomInputField";
-import { Header } from "../layout/Header";
-import { Footer } from "../layout/Footer";
-import {toast} from "react-toastify"
+import { CustomLayout } from "../../components/custom-layout/CustomLayout";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { postNewUser } from "../../helper/axios";
 
 export const RegisterPage = () => {
@@ -21,16 +21,15 @@ export const RegisterPage = () => {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
 
-
-    const {confirmPassword, ...rest} = form
-    if(confirmPassword !== rest.password) {
-      toast.error("Password do not match!")
-      return
+    const { confirmPassword, ...rest } = form;
+    if (confirmPassword !== rest.password) {
+      toast.error("Password do not match!");
+      return;
     }
 
-    const {status, message} = await postNewUser(rest)
+    const { status, message } = await postNewUser(rest);
 
-    toast[status](message)
+    toast[status](message);
   };
 
   const inputes = [
@@ -83,8 +82,7 @@ export const RegisterPage = () => {
     },
   ];
   return (
-    <div>
-      <Header />
+    <CustomLayout>
       <div className="main register-page p-5">
         <Container className="m-3">
           <Form
@@ -96,13 +94,19 @@ export const RegisterPage = () => {
             {inputes.map((item, i) => (
               <CustomInputField key={i} {...item} onChange={handleOnChange} />
             ))}
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+            <div className="d-grid">
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+              <div className="text-end">
+                <Link className="nav-link" to="/login">
+                  Login Here.
+                </Link>
+              </div>
+            </div>
           </Form>
         </Container>
       </div>
-      <Footer />
-    </div>
+    </CustomLayout>
   );
 };

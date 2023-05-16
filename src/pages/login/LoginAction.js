@@ -2,10 +2,12 @@ import {
   fetchNewAccessJWT,
   fetchUserProfile,
   loginUser,
+  updateUserProfile,
 } from "../../helper/axios";
-import { requestPending, requestSuccess } from "./authSlice";
+import { requestPending, requestSuccess } from "./LoginSlice";
 import { toast } from "react-toastify";
 
+//review name for login action later
 export const loginAction = (formData) => async (dispatch) => {
   try {
     dispatch(requestPending());
@@ -45,6 +47,14 @@ const getUserProfile = () => async (dispatch) => {
     ? dispatch(requestSuccess(user))
     : dispatch(requestSuccess({}));
 };
+
+//update user profile
+export const updateProfileAction = (data) => async (dispatch) => {
+  const { status, message } = await updateUserProfile(data);
+};
+toast[status](message);
+status === "success" && dispatch(getUserProfile());
+console.log(status);
 
 //auto-login
 export const autoLogin = () => async (dispatch) => {

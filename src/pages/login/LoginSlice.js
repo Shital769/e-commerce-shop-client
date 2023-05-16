@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   user: {},
   isLoading: false,
+  unRegisteredUser: {},
 };
 
 const userSlice = createSlice({
@@ -17,10 +18,14 @@ const userSlice = createSlice({
       state.isLoading = false;
       state.user = payload;
     },
+    setUnRegisteredUser: (state, { payload }) => {
+      state.unRegisteredUser = payload;
+      state.isLoading = false;
+    },
   },
 });
 
 const { reducer, actions } = userSlice;
 
-export const { requestPending, requestSuccess } = actions;
+export const { requestPending, requestSuccess, setUnRegisteredUser } = actions;
 export default reducer;
