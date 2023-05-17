@@ -123,6 +123,18 @@ export const updateUserProfile = async (data) => {
   return fetchProcessor(obj);
 };
 
+//products
+export const fetchCustomertProduct = async (slug) => {
+  const url = slug ? productInDashBoardApi + "/" + slug : productInDashBoardApi;
+
+  const obj = {
+    method: "get",
+    url,
+    slug,
+    isPrivate: true,
+  };
+};
+
 //categories
 export const fetchCategory = async () => {
   const url = categoryApi;
