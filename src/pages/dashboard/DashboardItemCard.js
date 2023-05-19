@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { getHotDealsProductAction } from "./DashBoardAction";
 
 export const DashboardItemCard = ({ slug, name, salesPrice, item, qty }) => {
+  const dispatch = useDispatch();
+  const { hotDealsProducts } = useSelector((state) => state.hotDeals);
+  //review here
+
+  useEffect(() => {
+    dispatch(getHotDealsProductAction());
+  });
+
   return (
     <div>
       <Row className="d-flex justify-content-around">
